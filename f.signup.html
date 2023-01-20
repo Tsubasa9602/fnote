@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Findings -サインアップ</title>
+        <link rel="stylesheet" type="text/css" href="f.signup.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    </head>
+
+    <style>
+      div {
+        text-align: center;
+      }
+    </style>
+
+    <div class ="picture">
+      <img src="f.jpg" width="26.5%" height="26.5%">
+    </div>
+
+    <form name="login_form">
+        <div class="login_form_top">
+          <h5>学校用メールアドレスとパスワードを設定してください。</h5>
+        </div>
+        <div class="login_form_btm">
+          <input id="e1" type="id" name="user_id" placeholder="example@konen-h.ed.jp">
+          <table>
+            <td><input id="e2" type="password" name="password" placeholder="パスワードを入力"></td>
+            <td><span id="buttonEye" type="button" class="fa fa-eye" onclick="pushHideButton()"></span></td>
+          </table>
+          <input id="e2k" class="confirmPw" type="password" name="password" placeholder="確認用パスワードを入力">
+          <input id="e3" type="submit" name="botton" value="サインアップ">
+          <h5>すでにメールアドレスを登録していますか？<font color="blue"><u><a href="f.home.html">ここでサインイン</a></u></font></h5>
+        </div>
+      </form>
+
+      <script>
+        document.getElementById("e3").onclick = function(){
+          if(document.getElementById("e1").value.indexOf("@konan-h.ed.jp") !== -1){
+            if(document.getElementById("e1").value.length==21){
+              alert("有効なメールアドレスです")
+            }
+            else{
+              alert("無効なメールアドレスです")
+            }
+          }
+          else{
+            alert("無効なメールアドレスです")
+          }
+        }
+
+        function pushHideButton() {
+          var txtPass = document.getElementById("e2");
+          var btnEye = document.getElementById("buttonEye");
+          if (txtPass.type === "text") {
+            txtPass.type = "password";
+            btnEye.className = "fa fa-eye";
+          } else {
+            txtPass.type = "text";
+            btnEye.className = "fa fa-eye-slash";
+          }
+      }
+      </script>
